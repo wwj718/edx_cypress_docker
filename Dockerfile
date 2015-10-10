@@ -18,7 +18,7 @@ RUN sed -i "s/PasswordAuthentication no/PasswordAuthentication yes/" /etc/ssh/ss
 #add 
 ADD config/wwjtest.py /tmp/
 
-CMD /usr/sbin/sshd -D;/sbin/my_init --enable-insecure-key
+CMD /usr/sbin/sshd -D&/sbin/my_init --enable-insecure-key
 
 EXPOSE 22 80 5000 5010 18010 18020
 
