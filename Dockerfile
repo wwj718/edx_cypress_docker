@@ -2,21 +2,23 @@
 # This is a tweaked version of https://github.com/appsembler/configuration/wiki/Creating-a-Docker-image 
 #
 
-FROM appsembler/edx-lite-cypress:latest
+FROM wwj718/edx_cypress_docker:1.01
 MAINTAINER wwj718 <wuwenjie718@gmail.com>
-
-#USER forum
-ADD config/forum-supervisor.sh /edx/app/forum/
-RUN /bin/chmod +x /edx/app/forum/forum-supervisor.sh
-RUN /bin/chown forum.forum /edx/app/forum/forum-supervisor.sh
+#user root:edx
+RUN echo 'root:edx' | chpasswd
+#enable ssh
+RUN apt-get install -y openssh-server
+RUN sed -i "s/PasswordAuthentication no/PasswordAuthentication yes/" /etc/ssh/sshd_config
+#ADD config/sshd.conf /edx/app/supervisor/conf.d/
+#RUN /bin/chown supervisor.supervisor /edx/app/supervisor/conf.d/sshd.conf
 #RUN /bin/rm /edx/var/forum/forum.sock
 #https://docs.docker.com/reference/builder/
-#CMD /bin/rm /edx/var/forum/forum.sock
 
 
 #add 
 ADD config/wwjtest.py /tmp/
 
+CMD /usr/sbin/sshd -D;/sbin/my_init --enable-insecure-key
 
-EXPOSE 80 5000 5010 18010 18020
+EXPOSE 22 80 5000 5010 18010 18020
 
