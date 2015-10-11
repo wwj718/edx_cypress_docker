@@ -1,4 +1,7 @@
 #edx_cypress_docker
+##Version 1.04
+*  enable email (Thank @OVER for contributing Email account )
+
 ##Version 1.03
 *  language_zh_CN
 *  TIME_ZONG:zh_CH
