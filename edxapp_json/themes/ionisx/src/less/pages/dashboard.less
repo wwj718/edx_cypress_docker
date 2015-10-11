@@ -1,0 +1,303 @@
+> .dashboard {
+    .ionisx-container();
+
+    margin-top: @layout-top-spacing;
+
+    .dashboard-banner {
+        .ionisx-alert-warning();
+    }
+
+    .profile-sidebar {
+        .hidden-xs();
+        .hidden-sm();
+        .make-md-column(3);
+        .make-lg-column(3);
+
+        background: none;
+        border: 0 none;
+        box-shadow: none;
+        margin: 60px 0 0;
+        padding: 15px;
+
+        .profile {
+            display: none;
+        }
+
+        .user-info {
+            padding: 0;
+
+            ul {
+                box-shadow: none;
+                background: none;
+                border: 0 none;
+                padding: 0 20px 0 0;
+
+                > li {
+                    border: 0 none;
+                    padding: 0;
+                    margin: 0 0 20px 0;
+
+                    &:last-child {
+                        margin: 0;
+                    }
+
+                    > span {
+                        font: inherit;
+                        color: inherit;
+                        font-size: 0.9em;
+                        margin: 0;
+
+                        &.title {
+                            text-transform: none;
+
+                            &:before {
+                                display: inline-block;
+                                width: 20px;
+                                color: @color-primary;
+                                font-family: 'FontAwesome';
+                            }
+                        }
+
+                        &.data {
+                            font-weight: @headings-font-weight;
+                        }
+                    }
+
+                    &.info--username {
+                        .title:before {
+                            content: '\f007';
+                        }
+                    }
+
+                    &.info--email {
+                        .title:before {
+                            content: '\f0e0';
+                        }
+                    }
+
+                    &.status-language {
+                        .title:before {
+                            content: '\f024';
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    .my-courses {
+        .square(auto);
+        .make-md-column(9);
+        .make-lg-column(9);
+
+        margin: 0;
+        padding: 0;
+
+        header {
+            border: 0 none;
+            margin: 0 0 30px 0;
+
+            h2 {
+                margin: 0;
+            }
+        }
+
+        .empty-dashboard-message {
+            margin: 0;
+            padding: 0;
+            text-align: left;
+
+            > p {
+                font: inherit;
+                color: inherit;
+            }
+
+            > a {
+                .ionisx-btn(@white, @color-secondary);
+
+                font-size: 0.9em;
+            }
+        }
+
+        .listing-courses {
+            .course-item {
+                border: 0 none;
+                padding: 0;
+                margin: 0 0 30px 0;
+                transition: all .1s ease-in;
+                background-color: @white;
+                border: 1px solid @color-border;
+                border-radius: @default-border-radius;
+                padding: 15px;
+
+                @media (min-width: @screen-sm-min) and (max-width: @screen-sm-max) {
+                    @_margin-right: 10px;
+
+                    // (container-width - container-padding - margin) / 2 - some pixels :)
+                    width: floor((@container-sm - 2 * 15px - @_margin-right) / 2) - 3px;
+                    margin-right: @_margin-right;
+                    display: inline-block;
+                    vertical-align: top;
+
+                    &:nth-of-type(even) {
+                        margin-right: 0;
+                    }
+                }
+
+                &:hover {
+                    border-color: @color-primary;
+                }
+
+                &:last-child {
+                    margin: 0;
+                }
+
+                .cover {
+                    .size(200px, auto);
+
+                    background-color: @color-background;
+                    transition: none;
+                    max-height: none;
+                    text-align: center;
+                    border: 1px solid @color-background;
+                    border-radius: @default-border-radius;
+                    float: left;
+                    display: block;
+
+                    @media (max-width: @screen-sm-max) {
+                        .size(100%, auto);
+
+                        float: none;
+                        margin-bottom: 20px;
+                    }
+
+                    img {
+                        min-height: 0;
+
+                        @media (min-width: @screen-md-min) {
+                            .size(100%, auto);
+
+                            max-height: 120px;
+                        }
+                    }
+
+                    div {
+                        .text-center();
+
+                        font-weight: @headings-font-weight;
+                        font-size: 0.9em;
+
+                        &.cover-university {
+                            color: @color-primary;
+                            font-weight: @headings-font-weight;
+                            font-size: 0.9em;
+                        }
+
+                        &.cover-course-status {
+
+                            &.course-soon {
+                                color: @color-disabled;
+                            }
+
+                            &.course-open {
+                                color: @color-success;
+                            }
+
+                            &.course-ended {
+                                color: @color-error;
+                            }
+                        }
+                    }
+                }
+
+                .info {
+                    .size(100%, auto);
+
+                    padding: 0;
+                    margin: 0;
+
+                    @media (min-width: @screen-md-min) {
+                        .square(auto);
+
+                        overflow: hidden;
+                        padding: 0 0 0 1em;
+                    }
+
+                    hgroup {
+                        margin: 0;
+
+                        @media (min-width: @screen-md-min) {
+                            margin: 0 0 38px 0;
+                        }
+
+                        h3 {
+                            margin-top: 0;
+
+                            a, span {
+                                font: inherit;
+                            }
+                        }
+
+                        .university {
+                            font: inherit;
+                            color: inherit;
+                            margin: 0;
+                        }
+
+                        .date-block {
+                            font: inherit;
+                            color: inherit;
+                            font-size: 0.9em;
+                            position: static;
+
+                            @media (min-width: @screen-md-min) {
+                                position: absolute;
+                                top: 0;
+                                right: 0;
+                            }
+                        }
+                    }
+
+                    .unenroll, .email-settings {
+                        font: inherit;
+                        color: inherit;
+                        font-size: 0.8em;
+                        margin-top: 15px;
+                        text-decoration: underline;
+
+                        @media (min-width: @screen-md-min) {
+                            display: inline;
+                            float: right;
+                            vertical-align: bottom;
+                            margin: 1.2em 0 0 0.5em;
+                        }
+                    }
+
+                    h4 {
+                        margin: 0 1em 0.5em 0;
+                    }
+
+                    hr {
+                        display: none;
+                    }
+
+                    p {
+                        font-size: 0.9em;
+                        margin: 0 0 1em 0;
+                    }
+
+                    .enter-course {
+                        .ionisx-btn(@white, @color-secondary);
+                        .size(100%, auto);
+
+                        font-size: 0.9em;
+
+                        @media (min-width: @screen-md-min) {
+                            .square(auto);
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

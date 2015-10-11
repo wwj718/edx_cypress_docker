@@ -1,0 +1,61 @@
+footer.global {
+    background-color: @color-primary;
+    font-size: 0.9em;
+    color: @color-background;
+    padding: 20px 0;
+    overflow: hidden;
+
+    .footer-container {
+        .container();
+
+        position: relative;
+    }
+
+    ul.links {
+        .list-unstyled();
+
+        margin: 0;
+
+        li {
+            display: inline-block;
+            margin: 0 5px 0 0;
+
+            &:after {
+                content: '\2022';
+                padding: 0 0 0 5px;
+            }
+
+            &:last-child {
+                margin: 0;
+
+                &:after {
+                    display: none;
+                }
+            }
+
+            a {
+                color: @color-background;
+
+                &:hover {
+                    color: @color-background;
+                }
+            }
+        }
+    }
+
+    .copyright {
+        margin: 0;
+    }
+
+    .by-ionisx {
+        .hidden-xs();
+
+        position: absolute;
+        top: -8px;
+        right: 0;
+
+        img {
+            height: 50px;
+        }
+    }
+}

@@ -1,0 +1,231 @@
+.xblock {
+    &.xmodule_VerticalModule {
+        .vert-mod {
+            .vert {
+                border: 0 none;
+                margin: 0 0 2em 0;
+                padding: 0 0 2em 0;
+                position: relative;
+                border-bottom: 1px solid @color-border;
+
+                &:after {
+                    content: '\f103';
+                    font-family: 'FontAwesome';
+                    color: @color-border;
+                    display: block;
+                    margin: 2em 0 0 0;
+                    text-align: center;
+                    position: absolute;
+                    bottom: -0.8em;
+                    left: 50%;
+                    background: @white;
+                }
+
+                &:last-child {
+                    border: 0 none;
+                    padding: 0;
+
+                    &:after {
+                        display: none;
+                    }
+                }
+            }
+        }
+    }
+
+    &.xmodule_VideoModule {
+        .video {
+            background: none;
+            background-color: @white;
+
+            .video-player {
+                .square(auto);
+
+                min-height: 0;
+                position: relative;
+                padding: 0 0 56.25% 0;
+
+                iframe {
+                    .square(100%) !important;
+
+                    position: absolute;
+                    left: 0;
+                    top: 0 !important;
+                }
+            }
+        }
+
+        * {
+            box-sizing: content-box;
+        }
+    }
+
+    &.xmodule_DiscussionModule {
+        .discussion-module {
+            border: 1px solid @color-border;
+            border-radius: @default-border-radius;
+
+            .discussion {
+                .new-post-article {
+                    margin: 0;
+
+                    > .inner-wrapper {
+                        .square(auto);
+                        min-width: 0;
+                        max-width: none;
+
+                        .new-post-form-errors {
+                            li {
+                                .ionisx-alert-error();
+                            }
+                        }
+
+                        > .new-post-form {
+                            .square(auto);
+
+                            border: 1px solid @color-border;
+                            border-radius: @default-border-radius;
+                            margin: 0;
+                            background: none;
+                            box-shadow: none;
+                            padding: 30px;
+                            color: @white;
+                            background-color: fadeout(@black, 20%);
+
+                            input[type=text],
+                            input[type=email],
+                            input[type=password],
+                            textarea {
+                                .ionisx-input();
+
+                                color: @black;
+                            }
+
+                            .wmd-panel {
+                                .square(auto);
+                                min-width: 0;
+
+                                textarea {
+                                    border-bottom-left-radius: 0;
+                                    border-bottom-right-radius: 0;
+                                }
+
+                                .wmd-preview-container {
+                                    .square(auto);
+
+                                    box-shadow: none;
+                                    border: 0 none;
+                                }
+                            }
+
+                            input[type=submit] {
+                                .ionisx-btn(@white, @color-success);
+
+                                font-size: 0.9em;
+                            }
+
+                            .new-post-cancel {
+                                .ionisx-btn(@black, @color-background);
+
+                                font-size: 0.9em;
+                                margin-left: 1em;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        .new-post-btn {
+            .ionisx-btn(@white, @color-secondary);
+
+            font-size: 0.9em;
+
+            span.icon {
+                .square(auto);
+
+                font: inherit;
+                font-family: 'FontAwesome';
+                color: inherit;
+                display: inline;
+                float: none;
+                margin: 0;
+                padding: 0 0.5em 0 0;
+            }
+        }
+    }
+
+    &.xmodule_CapaModule {
+        .problem {
+            p.inline-text {
+                display: inline;
+
+                + span {
+                    display: inline;
+                    margin-left: 5px;
+                    margin-right: -10px;
+
+                    > form {
+                        display: inline;
+
+                        select {
+                            margin-right: 5px;
+                        }
+
+                        span.status,
+                        span.unanswered {
+                            top: 4px;
+                        }
+                    }
+                }
+            }
+        }
+
+        button, input[type=button] {
+            .ionisx-btn(@white, @color-secondary);
+
+            font-size: 0.9em;
+            display: inline;
+
+            span {
+                font: inherit;
+                color: inherit;
+            }
+        }
+
+        .submission_feedback {
+            font: inherit;
+            color: @color-disabled;
+        }
+
+        .action {
+            .show {
+                // Ugly hack because ugly !important.
+                display: inline !important;
+            }
+
+            .save {
+                display: none;
+            }
+        }
+    }
+
+    .taggedtext {
+        button, input[type=button] {
+            .ionisx-btn(@white, @color-secondary);
+
+            font-size: 0.9em;
+            display: inline;
+
+            span {
+                font: inherit;
+                color: inherit;
+            }
+        }
+
+        .submission_feedback {
+            font: inherit;
+            color: @color-disabled;
+        }
+    }
+}

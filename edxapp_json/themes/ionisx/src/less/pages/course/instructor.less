@@ -1,0 +1,83 @@
+> .instructor-dashboard-wrapper,
+> .instructor-dashboard-wrapper-2 {
+
+    > .instructor-dashboard-content,
+    > .instructor-dashboard-content-2 {
+        .square(auto);
+
+        display: block;
+        padding: 0;
+        margin: 0;
+
+        h1 {
+            font: inherit;
+            font-size: @font-size-h2;
+            font-weight: @headings-font-weight;
+            color: @color-primary;
+            border: 0 none;
+            padding: 0;
+            margin: 0 0 1.5em 0;
+
+            & + hr {
+                display: none;
+            }
+        }
+
+        .wrapper-msg {
+            .ionisx-alert();
+            .ionisx-alert-warning();
+        }
+
+        ul.instructor-nav {
+            font: inherit;
+            color: inherit;
+            padding: 0;
+            margin: 0;
+            border: 1px solid @color-border;
+            border-radius: @default-border-radius;
+            overflow: hidden;
+
+            li {
+                padding: 0;
+                margin: 0;
+
+                a {
+                    float: none;
+                    display: inline-block;
+                    color: inherit;
+                    padding: 0.5em 1em;
+                    margin: 0;
+
+                    &:hover {
+                        text-decoration: none;
+                        background-color: @color-background;
+                    }
+
+                    &.active-section {
+                        background-color: @color-secondary;
+                        color: @white;
+                    }
+                }
+            }
+        }
+
+        input {
+            font: inherit;
+            color: inherit;
+            display: inline-block;
+            vertical-align: baseline;
+            margin: 0;
+        }
+
+        input[type=button] {
+            .ionisx-btn(@white, @color-secondary);
+
+            font-size: 0.9em;
+        }
+
+        .member-list-widget .label {
+            display: table-cell;
+            border-radius: 0;
+        }
+    }
+}

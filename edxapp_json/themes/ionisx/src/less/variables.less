@@ -1,0 +1,83 @@
+////////////////////////////////////////////////////////////////////////
+// External configuration                                             //
+////////////////////////////////////////////////////////////////////////
+
+@fa-font-path: '../fonts/font-awesome';
+
+// This overrides Glyphicons paths in Bootstrap:
+// It is rather hacky since the fonts don't share the same characters.
+// But it will fix a few errors trying to fetch fonts that don't exist.
+// (we don't want glyphicons)
+@icon-font-path: '../fonts/font-awesome/';
+@icon-font-name: 'fontawesome-webfont';
+@icon-font-svg-id: 'fontawesomeregular';
+
+
+////////////////////////////////////////////////////////////////////////
+// Colors                                                             //
+////////////////////////////////////////////////////////////////////////
+
+@white: #fff;
+@black: lighten(#000, 3%);
+
+@color-primary: #3c556c;
+@color-secondary: #1e9ed7;
+@color-background: darken(#fff, 3%);
+
+@color-error: #c0392b;
+@color-success: #2ecc71;
+@color-warning: #f39c12;
+
+@color-disabled: #bdc3c7;
+@color-border: #ddd;
+
+// Misc
+@hr-border: @color-border;
+
+
+////////////////////////////////////////////////////////////////////////
+// Logo                                                               //
+////////////////////////////////////////////////////////////////////////
+
+@logo-img-path: '../images/logo-open-edx.png';
+@logo-img-width: 180px;
+@logo-sm-img-path: '../images/logo-edx.png';
+@logo-sm-img-width: 80px;
+
+
+////////////////////////////////////////////////////////////////////////
+// Fonts                                                              //
+////////////////////////////////////////////////////////////////////////
+
+@font-family-sans-serif: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+@font-family-serif: Georgia, 'Times New Roman', Times, serif;
+
+@font-size-base: 14px;
+@line-height-base: 20/14;
+
+@headings-line-height: 1.1em;
+
+@headings-font-weight: 600;
+
+@font-size-h1: 22px;
+@font-size-h2: 18px;
+@font-size-h3: 16px;
+@font-size-h4: 16px;
+
+
+////////////////////////////////////////////////////////////////////////
+// Layout                                                             //
+////////////////////////////////////////////////////////////////////////
+
+@layout-top-spacing: 30px;
+@layout-bottom-spacing: 30px;
+
+@layout-header-height: 66px;
+@layout-footer-height: 76px;
+
+
+////////////////////////////////////////////////////////////////////////
+// Misc                                                               //
+////////////////////////////////////////////////////////////////////////
+
+@default-border-radius: 4px;

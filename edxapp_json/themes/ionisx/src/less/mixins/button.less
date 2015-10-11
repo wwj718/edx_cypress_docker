@@ -1,0 +1,69 @@
+.ionisx-btn(@fg-color, @bg-color) {
+    .square(auto);
+
+    font: inherit;
+    background: none;
+
+    .btn();
+    .button-variant(@fg-color, @bg-color, @fg-color);
+
+    text-shadow: none;
+    text-overflow: ellipsis;
+    transition: all .1s ease-in;
+    box-shadow: none;
+    margin: 0;
+    padding: 0.5em 1.2em;
+    outline: none;
+    overflow: hidden;
+
+    @media (max-width: @screen-xs-max) {
+        white-space: normal;
+    }
+
+    &:focus {
+        background-color: @bg-color;
+        color: @fg-color;
+        border-color: @fg-color;
+    }
+
+    & when (@fg-color = @white) {
+        border-color: @bg-color;
+    }
+
+    & when (@fg-color = @black) {
+        border-color: @bg-color;
+    }
+
+    &:focus, &:active {
+        .ionisx-btn-hover(@fg-color, @bg-color);
+
+        border-color: @bg-color;
+        outline: none;
+    }
+
+    &:hover {
+        .ionisx-btn-hover(@fg-color, @bg-color);
+    }
+}
+
+.ionisx-btn-hover(@fg-color, @bg-color) {
+    background: none;
+    background-color: @fg-color;
+    color: @bg-color;
+    border-color: @bg-color;
+    box-shadow: none;
+
+    & when (@bg-color = @white) {
+        border-color: @fg-color;
+    }
+
+    & when (@bg-color = @black) {
+        border-color: @fg-color;
+    }
+}
+
+.ionisx-btn-disabled(@fg-color: @color-disabled) {
+    .ionisx-btn(@fg-color, @white);
+
+    cursor: default;
+}

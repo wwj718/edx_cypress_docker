@@ -1,0 +1,78 @@
+#lean_overlay {
+    background: none;
+    background-color: fadeout(@black, 40%);
+}
+
+.modal, .leanModal_box {
+    .ionisx-modal();
+
+    &.video-modal {
+        .ionisx-container-modal();
+        .ionisx-video-modal();
+    }
+
+    button.dismiss:not(.close-modal) {
+        .ionisx-btn(@white, @color-secondary);
+    }
+}
+
+#forgot-password-modal {
+    .ionisx-modal();
+
+    #password-reset {
+        padding: 0;
+
+        header {
+            margin: 0 0 2em 0;
+            padding: 0;
+
+            h2 {
+                margin: 0;
+                font: inherit;
+                font-size: @font-size-h2;
+                font-weight: @headings-font-weight;
+                text-transform: none;
+                text-align: center;
+                color: @color-primary;
+            }
+        }
+
+        .instructions {
+            padding: 0 0 1em 0;
+
+            p {
+                margin: 0 0 1em 0;
+            }
+        }
+
+        form {
+            fieldset {
+                legend {
+                    display: none;
+                }
+
+                label {
+                    font: inherit;
+
+                    &:after {
+                        display: none;
+                    }
+                }
+
+                .field.is-focused {
+                    label, .tip {
+                        color: inherit;
+                    }
+                }
+
+                input[type=email] {
+                    .ionisx-input();
+                }
+            }
+
+            button[type=submit] {
+                .ionisx-btn(@white, @color-secondary);
+            }
+        }
+    }
+}

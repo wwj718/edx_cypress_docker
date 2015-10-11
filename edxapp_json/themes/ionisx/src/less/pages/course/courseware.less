@@ -1,0 +1,338 @@
+.course-wrapper {
+    .size(100%, auto);
+
+    padding: 0;
+
+    .course-index {
+        .square(100%);
+        .make-md-column(3);
+        .make-lg-column(3);
+
+        padding: 0;
+        display: block;
+        font: inherit;
+        background: none;
+        border-radius: 0;
+        border: 0 none;
+        transition: none;
+        box-sizing: border-box;
+        border-right: 1px solid @color-border;
+
+        @media (max-width: @screen-sm-max) {
+            border-right: none;
+            border-bottom: 2px solid @color-border;
+        }
+
+        #courseware-search-bar {
+            display: none;
+        }
+
+        #accordion {
+            font: inherit;
+
+            .chapter {
+                border-radius: 0;
+                box-shadow: none;
+                border-bottom: 1px solid @color-border;
+                padding: 0;
+
+                &:last-child {
+                    border: 0 none;
+                }
+
+                &.is-open {
+                    font-weight: @headings-font-weight;
+                }
+
+                h3 {
+                    font: inherit;
+                    padding: 0.6em 0.8em;
+
+                    .ui-accordion-header-icon {
+                        left: 0.6em;
+                    }
+
+                    a {
+                        font: inherit;
+                        color: @black;
+
+                        &:hover {
+                            text-decoration: none;
+                        }
+                    }
+                }
+
+                ul {
+                    font: inherit;
+                    font-weight: 500;
+                    background: none;
+                    background-color: @white;
+                    padding: 0.6em;
+
+                    li {
+                        margin: 0 0 0.6em 0;
+
+                        &:last-child {
+                            margin: 0;
+                        }
+
+                        a {
+                            font: inherit;
+                            color: @color-primary;
+                            background: none;
+                            padding: 0.3em 0.5em;
+                            border-radius: @default-border-radius;
+                            border: 1px solid transparent;
+                            box-shadow: none;
+
+                            &:hover {
+                                border-color: @color-border;
+                            }
+
+                            p {
+                                font: inherit;
+                                color: inherit;
+
+                                &.subtitle {
+                                    color: @black;
+                                }
+                            }
+                        }
+
+                        &.graded {
+                            a:after {
+                                content: '\f017';
+                                font-family: 'FontAwesome';
+                                font-size: 1.2em;
+                                position: absolute;
+                                right: 0.5em;
+                                bottom: 0.15em;
+                            }
+
+                            img {
+                                display: none;
+                            }
+                        }
+
+                        &.active {
+                            font: inherit;
+
+                            a {
+                                border-color: @color-primary;
+                                background-color: @color-primary;
+                                color: @white;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    .course-content {
+        .square(100%);
+        .make-md-column(9);
+        .make-lg-column(9);
+
+        font: inherit;
+        display: block;
+        margin: 0 0 0 -1px;
+        padding: 30px;
+
+        border-left: 1px solid @color-border;
+
+        @media (max-width: @screen-xs-max) {
+            padding: 10px;
+        }
+
+        @import 'xblock.less';
+
+        .sequence-nav {
+            margin: 0 0 2em 0;
+            border: 0 none;
+
+            button {
+                background: none;
+                border: 2px solid @color-border;
+                box-shadow: none;
+                height: 44px;
+                overflow: hidden;
+                text-shadow: none;
+                transition: none;
+
+                &.disabled {
+                    background-color: fade(@color-disabled, 25%);
+                    opacity: 1;
+
+                    .icon {
+                        opacity: 0.5;
+                    }
+                }
+            }
+
+            .sequence-list-wrapper {
+                background: none;
+                box-shadow: none;
+                border: 0 none;
+                margin: 0 38px;
+                padding: 0;
+
+                .left-shadow, .right-shadow {
+                    display: none;
+                }
+
+                ol {
+                    padding: 0;
+
+                    li {
+                        min-width: 0;
+
+                        &:first-child a {
+                            border-left: 2px solid @color-border;
+                        }
+
+                        &:last-child a {
+                            border-right: 2px solid @color-border;
+                        }
+
+                        a {
+                            .size(auto, 44px);
+
+                            text-align: center;
+                            background: none;
+                            border: 0 none;
+                            box-shadow: none;
+                            color: @white;
+                            border-top: 2px solid @color-border;
+                            border-bottom: 2px solid @color-border;
+
+                            @media (max-width: @screen-sm-max) {
+                                display: none;
+                            }
+
+                            &.active {
+                                border-color: @color-primary;
+                                color: @color-primary;
+
+                                @media (max-width: @screen-sm-max) {
+                                    display: block;
+                                    border: 2px solid @color-primary;
+                                }
+
+                                &.progress-none {
+                                    border-color: @color-primary;
+                                    color: @color-primary;
+                                }
+
+                                &.progress-some {
+                                    border-color: @color-warning;
+                                    color: @color-warning;
+                                }
+
+                                &.progress-in_progress {
+                                    border-color: @color-warning;
+                                    color: @color-warning;
+                                }
+
+                                &.progress-done {
+                                    border-color: @color-success;
+                                    color: @color-success;
+                                }
+                            }
+
+                            &.inactive, &.visited {
+                                &.progress-none, &.progress-0 {
+                                    background-color: @color-border;
+
+                                    &:hover {
+                                        background: @white;
+                                        color: @color-border;
+                                    }
+                                }
+
+                                &.progress-some, &.progress-in_progress {
+                                    background-color: @color-warning;
+                                    border-color: @color-warning;
+
+                                    &:hover {
+                                        background-color: @white;
+                                        color: @color-warning;
+                                    }
+                                }
+
+                                &.progress-done {
+                                    background-color: @color-success;
+                                    border-color: @color-success;
+
+                                    &:hover {
+                                        background-color: @white;
+                                        color: @color-success;
+                                    }
+                                }
+                            }
+
+                            &:hover {
+                                text-decoration: none;
+                            }
+
+                            &:after {
+                                font: inherit;
+                                color: inherit;
+                                content: '\f040';
+                                font-family: 'FontAwesome';
+                                font-size: 1.2em;
+                                display: block;
+                                margin: 8px auto 0;
+                                padding: 0
+                            }
+
+                            &.seq_video:after {
+                                content: '\f03d';
+                            }
+
+                            &.seq_problem:after {
+                                content: '\f040';
+                            }
+
+                            .icon {
+                                display: none;
+                            }
+
+                            > p {
+                                display: none;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        h2 {
+            margin-top: 0
+        }
+
+        .sequence-bottom {
+            .button-previous {
+                margin: 0 1px;
+            }
+
+            .button-previous, .button-next {
+                background: none;
+                box-shadow: none;
+                display: inline-block;
+                border: 2px solid @color-border;
+                overflow: hidden;
+                transition: none;
+
+                &.disabled {
+                    background-color: fade(@color-disabled, 25%);
+                    opacity: 1;
+
+                    .icon {
+                        opacity: 0.5;
+                    }
+                }
+            }
+        }
+    }
+}

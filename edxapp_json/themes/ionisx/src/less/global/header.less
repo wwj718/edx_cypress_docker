@@ -1,0 +1,209 @@
+header.global, header.global-new, header.global.slim {
+    .square(auto);
+    .navbar();
+    .navbar-default();
+
+    padding: 0;
+    border: 0 none;
+    background-color: @color-primary;
+    margin-bottom: 0;
+    transition: all .2s ease-in;
+    box-shadow: none;
+    border-radius: 0 !important;
+
+    &:hover {
+        background-color: fadeout(@color-primary, 20%);
+    }
+
+    > nav {
+        .ionisx-container();
+
+        padding-top: 15px;
+        padding-bottom: 15px;
+
+        h1.logo {
+            margin: 0 30px 0 0;
+            padding: 0;
+            float: left;
+
+            &:before {
+                display: none;
+            }
+
+            a {
+                .size(@logo-img-width, 36px);
+                .text-hide();
+
+                background-image: url(@logo-img-path);
+                background-size: contain;
+                background-repeat: no-repeat;
+
+                @media (max-width: @screen-xs-max) {
+                    .size(@logo-sm-img-width, 36px);
+
+                    background-image: url(@logo-sm-img-path);
+                }
+            }
+        }
+
+        h2 {
+            .square(auto);
+
+            font: inherit;
+            font-size: 0.9em;
+            margin: 0.9em 0 0 0;
+            padding: 0;
+            text-shadow: none;
+            color: @color-background;
+
+            @media (max-width: @screen-sm-max) {
+                display: none;
+            }
+        }
+
+        .nav-global {
+            margin: 0.6em 0 0 0;
+
+            @media (max-width: @screen-xs-min) {
+                display: none;
+            }
+
+            a {
+                font: inherit;
+                font-weight: 500;
+                letter-spacing: inherit;
+                padding: 0;
+                color: @color-background;
+                text-transform: none;
+                border: 0 none;
+
+                &:hover {
+                    color: @white;
+                }
+
+                &:focus {
+                    color: @white;
+                    text-decoration: underline;
+                }
+
+                &.cta-register {
+                    display: none;
+                }
+            }
+        }
+
+        .nav-courseware {
+            margin: 0;
+
+            div {
+                margin: 0 5px 0 0;
+
+                &:last-child {
+                    margin: 0;
+                }
+            }
+
+            a {
+                &.cta-login, &.cta-register {
+                    .ionisx-btn(@color-primary, @white);
+
+                    text-transform: none;
+                }
+
+                &.cta-register {
+                    display: none;
+                }
+            }
+        }
+
+        ol.user {
+            margin: 0;
+
+            > li.primary > a {
+                .ionisx-btn(@color-primary, @white);
+
+                border-radius: 0;
+                border-top-left-radius: 4px;
+                border-bottom-left-radius: 4px;
+                border-radius: @default-border-radius 0 0 @default-border-radius;
+
+                &.user-link {
+                    max-width: 120px;
+
+                    i.fa {
+                        display: none;
+                    }
+
+                    div {
+                        margin: 0;
+                        padding: 0;
+                    }
+                }
+
+                &.dropdown.active {
+                    .ionisx-btn-hover(@color-primary, @white);
+                }
+
+                &.dropdown {
+                    padding: 7px 8px;
+                    border-left: none;
+                    border-radius: 0 @default-border-radius @default-border-radius 0;
+                    letter-spacing: normal;
+                }
+
+                > span.avatar {
+                    display: none;
+                    background: none;
+                }
+            }
+
+            ul.dropdown-menu {
+                .square(auto);
+
+                padding: 0;
+                z-index: 10;
+                top: 28px;
+                left: initial;
+                right: 0;
+                box-shadow: none;
+                border: 1px solid @color-primary;
+                border-top: 0 none;
+                border-top-right-radius: 0;
+                background-color: @white;
+
+                &:before {
+                    display: none;
+                }
+
+                > li {
+                    transition: all .1s ease-in;
+                    border: 0 none;
+                    padding: 2px 8px;
+                    color: @color-primary;
+
+                    > a {
+                        border: 0 none;
+                        outline: none;
+                        padding: 0;
+                        letter-spacing: normal;
+                        color: inherit;
+
+                        &:hover, &:focus, &:active {
+                            background: none;
+                            color: inherit;
+                        }
+                    }
+
+                    &:hover {
+                        background-color: @color-primary;
+                        color: @white;
+
+                        > a {
+                            color: inherit;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

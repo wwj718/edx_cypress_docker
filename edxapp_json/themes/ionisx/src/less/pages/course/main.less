@@ -1,0 +1,129 @@
+@import 'about.less';
+
+.wrapper-course-material {
+    .size(100%, auto);
+
+    margin: 0;
+    padding: 0;
+    background: none;
+    border-radius: 0;
+    box-shadow: none;
+}
+
+.course-material {
+    .ionisx-container();
+
+    background: none;
+    box-shadow: none;
+    border-radius: 0;
+    margin-top: @layout-top-spacing / 2;
+
+    .course-tabs {
+        border-radius: 0;
+        padding: 0;
+        margin: 0;
+
+        li {
+            margin: 0 0.5em 0 0;
+
+            &:last-child {
+                margin: 0;
+
+                @media (max-width: @screen-xs-max) {
+                    &.right {
+                        .clearfix();
+                        .square(auto);
+
+                        float: none;
+
+                        a {
+                            .size(100%, auto);
+
+                            margin-top: 10px;
+                        }
+                    }
+                }
+            }
+
+            a {
+                font: inherit;
+                color: inherit;
+                font-weight: @headings-font-weight;
+                border-radius: @default-border-radius;
+                padding: 8px 12px;
+
+                &:hover {
+                    background-color: @white;
+                }
+
+                &.active {
+                    box-shadow: none;
+                    text-shadow: none;
+                    background: none;
+                    background-color: @color-primary;
+                    color: @white;
+                }
+
+                &.new-post-btn {
+                    .ionisx-btn(@white, @color-secondary);
+
+                    font-size: 0.9em;
+
+                    span.icon {
+                        .square(auto);
+
+                        font: inherit;
+                        font-family: 'FontAwesome';
+                        color: inherit;
+                        display: inline;
+                        float: none;
+                        margin: 0;
+                        padding: 0 0.5em 0 0;
+                    }
+                }
+            }
+        }
+    }
+}
+
+.container {
+    margin: 0;
+    padding: 0;
+
+    .ionisx-container();
+
+    margin-top: @layout-top-spacing / 2;
+
+    > div {
+        .square(auto);
+        .clearfix();
+
+        display: block;
+        padding: 30px;
+        box-shadow: none;
+        background: none;
+        background-color: @white;
+        border: 1px solid @color-border;
+        border-radius: @default-border-radius;
+        overflow: hidden;
+
+        @media (max-width: @screen-xs-max) {
+            padding: 10px;
+        }
+
+        .wrap-instructor-info {
+            float: right;
+            margin: 0;
+        }
+    }
+
+    @import 'courseware.less';
+    @import 'pages.less';
+    @import 'info.less';
+    @import 'wiki.less';
+    @import 'progression.less';
+    @import 'instructor.less';
+    @import 'forum.less';
+}
+
+@import 'book.less';

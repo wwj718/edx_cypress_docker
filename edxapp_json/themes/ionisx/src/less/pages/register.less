@@ -1,0 +1,132 @@
+> .register {
+    .ionisx-container();
+
+    margin-top: @layout-top-spacing;
+    background: none;
+
+    @_aside-size: 300px;
+
+    .content {
+        .size(100%, auto);
+
+        margin: 0;
+
+        @media (min-width: @screen-md-min) {
+            margin-right: -@_aside-size;
+            padding-right: @_aside-size + 40px;
+            float: left;
+        }
+
+        a {
+            font: inherit;
+            color: @color-primary;
+        }
+
+        form {
+            .status {
+                .ionisx-alert();
+
+                &.submission-error {
+                    .ionisx-alert-error();
+                }
+            }
+
+            .list-input {
+                color: inherit;
+                font: inherit;
+
+                 > li {
+                     position: relative;
+
+                     .checkbox {
+                         padding-left: 0;
+
+                         input {
+                             .square(auto);
+
+                             margin: 6px 8px 0 0;
+                         }
+                     }
+
+                     .tip {
+                         color: inherit;
+                     }
+                 }
+            }
+
+            label {
+                font: inherit;
+                color: inherit;
+                text-shadow: none;
+            }
+
+            input {
+                font: inherit;
+                color: inherit;
+                display: inline-block;
+                margin: 0;
+            }
+
+            div.squaredThree {
+                .ionisx-checkbox();
+            }
+
+            .field.is-focused label {
+                color: @color-primary;
+            }
+
+            input[type=text],
+            input[type=email],
+            input[type=password],
+            textarea {
+                .ionisx-input();
+            }
+
+            .group-form-personalinformation,
+            .group-form-personalinformation2 {
+                display: none;
+            }
+
+            .group-form-accountacknowledgements {
+                position: relative;
+            }
+
+            .form-actions {
+                button[type=submit] {
+                    .ionisx-btn(@white, @color-secondary);
+
+                    @media (min-width: @screen-md-min) {
+                        .square(auto);
+
+                        padding-left: 2.5em;
+                        padding-right: 2.5em;
+                    }
+
+                    font-weight: @headings-font-weight;
+                }
+            }
+        }
+    }
+
+    aside {
+        .hidden-xs();
+        .hidden-sm();
+        .size(@_aside-size, auto);
+
+        padding: 0;
+        margin: 0;
+        float: right;
+
+        p {
+            font: inherit;
+            color: inherit;
+
+            font-size: 0.9em;
+        }
+
+        a {
+            font: inherit;
+            color: @color-primary;
+        }
+    }
+}
