@@ -6,7 +6,7 @@
 
 ##Version 1.04
 *  enable email (Thank @OVER for contributing Email account )
-
+*  Thank @netwalk0r for uploading edx_cypress_docker_1.04.tar.gz to QQ Group(Our QQ Group:106781163)
 ##Version 1.03
 *  language_zh_CN
 *  TIME_ZONG:zh_CH
