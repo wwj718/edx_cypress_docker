@@ -20,10 +20,10 @@
 
 ###Pull it
 *  [install docker](https://docs.docker.com/installation/)
-*  sudo docker pull wwj718/edx_cypress_docker:1.04
+*  sudo docker pull wwj718/edx_cypress_docker:1.05
 
 ##Run it
-*  sudo docker run -itd -P wwj718/edx_cypress_docker:1.04
+*  sudo docker run -itd -P wwj718/edx_cypress_docker:1.05
 
 ##Get the info of running container
 *  sudo docker ps
