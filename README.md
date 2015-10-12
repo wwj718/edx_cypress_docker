@@ -1,4 +1,9 @@
 #edx_cypress_docker
+##Version 1.05
+*  Optional responsive theme using Bootstrap 
+  *  login to the container via SSH。then execute `/theme/use_ionisx_theme.sh` 。that's ok!
+
+
 ##Version 1.04
 *  enable email (Thank @OVER for contributing Email account )
 
