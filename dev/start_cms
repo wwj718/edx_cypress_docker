@@ -1,0 +1,2 @@
+#! /bin/bash
+sudo -u www-data /edx/bin/python.edxapp /edx/app/edxapp/edx-platform-dev/manage.py cms runserver 0.0.0.0:5010 --settings devstack

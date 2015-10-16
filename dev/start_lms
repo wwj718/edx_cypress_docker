@@ -1,0 +1,2 @@
+#! /bin/bash
+sudo -u www-data /edx/bin/python.edxapp /edx/app/edxapp/edx-platform-dev/manage.py lms runserver 0.0.0.0:5000 --settings devstack
