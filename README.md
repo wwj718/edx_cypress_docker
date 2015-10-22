@@ -1,5 +1,11 @@
 #edx_cypress_docker
 
+##Version 1.13
+*  enable django-extensions
+
+##Version 1.12
+*  mv jquery from google cdn to bootcss cdn
+
 ##Version 1.11
 *  Version 1.1x  is to improve the development experience
 
@@ -25,10 +31,10 @@
 
 ###Pull it
 *  [install docker](https://docs.docker.com/installation/)
-*  sudo docker pull wwj718/edx_cypress_docker:1.05
+*  sudo docker pull wwj718/edx_cypress_docker:1.13
 
 ##Run it
-*  sudo docker run -itd -P wwj718/edx_cypress_docker:1.11
+*  sudo docker run -itd -P wwj718/edx_cypress_docker:1.13
 
 ##Get the info of running container
 *  sudo docker ps
