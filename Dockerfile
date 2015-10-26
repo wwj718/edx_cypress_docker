@@ -9,10 +9,7 @@ MAINTAINER wwj718 <wuwenjie718@gmail.com>
 #ADD config/docker.py /edx/app/edxapp/edx-platform/lms/envs/
 #RUN /bin/chown edxapp.edxapp /edx/app/edxapp/edx-platform/lms/envs/docker.py
 #add 
-RUN /edx/app/edxapp/venvs/edxapp/bin/pip install Werkzeug
-RUN /edx/app/edxapp/venvs/edxapp/bin/pip install django-extensions
-ADD config/devstack.py /edx/app/edxapp/edx-platform/lms/envs/
-#ADD config/wwjtest.py /tmp/
+ADD lang_po/* /edx/app/edxapp/edx-platform/conf/locale/zh_CN/LC_MESSAGES/ 
 
 #CMD /usr/sbin/sshd -D&/sbin/my_init --enable-insecure-key
 
