@@ -2,7 +2,7 @@
 # This is a tweaked version of https://github.com/appsembler/configuration/wiki/Creating-a-Docker-image 
 #
 
-FROM wwj718/edx_cypress_docker:1.12
+FROM wwj718/edx_cypress_docker:1.13
 MAINTAINER wwj718 <wuwenjie718@gmail.com>
 #user root:edx
 
