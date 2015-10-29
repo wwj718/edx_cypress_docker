@@ -1,5 +1,8 @@
 #edx_cypress_docker
 
+##Version 1.22
+*  replace platform name(edx_cn)
+
 ##Version 1.21
 *  adopt complete zh_CN/LC_MESSAGES(Thank [edustack](http://edustack.org/) for contributing it)
 
@@ -34,10 +37,10 @@
 
 ###Pull it
 *  [install docker](https://docs.docker.com/installation/)
-*  sudo docker pull wwj718/edx_cypress_docker:1.21
+*  sudo docker pull wwj718/edx_cypress_docker:1.22
 
 ##Run it
-*  sudo docker run -itd -P wwj718/edx_cypress_docker:1.21
+*  sudo docker run -itd -P wwj718/edx_cypress_docker:1.22
 
 ##Get the info of running container
 *  sudo docker ps
