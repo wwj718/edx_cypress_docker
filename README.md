@@ -1,5 +1,7 @@
 #edx_cypress_docker
 
+warning: edx_cypress_docker is no longer maintained , I recommend using [openedx-docker](https://github.com/regisb/openedx-docker) and [devstack](https://github.com/edx/devstack)
+
 ##Version 1.22
 *  replace platform name(edx_cn)
 
